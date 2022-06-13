@@ -20,5 +20,9 @@ export default class shop {
             this.getShopItem(item).click()
     }
 
-   
+   checkTitle(Title) {
+        cy.get('.nav-content')
+            .within(() => {
+                cy.get('li').eq('1').should('contain', Title)
+            })
 }
